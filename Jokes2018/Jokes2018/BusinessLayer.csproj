@@ -42,9 +42,14 @@
   <ItemGroup>
     <Compile Include="Category.cs" />
     <Compile Include="Joke.cs" />
+    <Compile Include="JokeFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\SqlLayer\SqlLayer.csproj">
+      <Project>{a5844f88-6489-45d3-821e-249bfe6861c9}</Project>
+      <Name>SqlLayer</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Types\Types.csproj">
       <Project>{C281C8DE-BF10-4804-AEA6-D98A1E7F26FF}</Project>
       <Name>Types</Name>
