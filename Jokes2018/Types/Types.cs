@@ -9,8 +9,23 @@ namespace Types
 {
     public interface IJokes
     {
+        int Id { get; set; }
+        string Title { get; set; }
+        string Teaser { get; set; }
+        string JokeText { get; set; }
+        DateTime CreateAt { get; set; }
+        int UserId { get; set; }
+        int CategoryId { get; set; }
+        bool IsFeatured { get; set; }
 
-       
+    }
+
+    public interface ICategory
+    {
+        int CategoryId { get; set; }
+        string CategoryName { get; set; }
+        string Description { get; set; }
+        DateTime CreatedDate { get; set; }
     }
 
     public struct parameters
