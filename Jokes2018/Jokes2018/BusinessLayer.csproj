@@ -41,10 +41,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Category.cs" />
+    <Compile Include="CategoriesFactory.cs" />
     <Compile Include="Joke.cs" />
+    <Compile Include="Lists.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\SqlLayer\SqlLayer.csproj">
+      <Project>{A5844F88-6489-45D3-821E-249BFE6861C9}</Project>
+      <Name>SqlLayer</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Types\Types.csproj">
       <Project>{C281C8DE-BF10-4804-AEA6-D98A1E7F26FF}</Project>
       <Name>Types</Name>
