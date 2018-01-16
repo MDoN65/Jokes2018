@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace Jokes2018
 {
-    class Category
+    public class Category : ICategory
     {
+        internal Category() { }
+        internal int _categoryId;
+        internal string _categoryName;
+        internal string _description;
+        internal DateTime _createdDate;
+
     }
 }
