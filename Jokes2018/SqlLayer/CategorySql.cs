@@ -8,7 +8,8 @@ using DataAccessLayer;
 
 namespace SqlLayer
 {
-    class CategorySql
+    public class CategorySql
     {
+
     }
 }
