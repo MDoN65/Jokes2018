@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jokes2018", "Jokes2018\Jokes2018.csproj", "{D12A2FE9-BAE4-40D3-AB81-FE2D759B9130}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessLayer", "Jokes2018\BusinessLayer.csproj", "{D12A2FE9-BAE4-40D3-AB81-FE2D759B9130}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

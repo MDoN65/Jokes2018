@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Jokes2018
 {
-    public class Class1
+    public class Joke
     {
     }
 }
