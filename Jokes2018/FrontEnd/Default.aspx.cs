@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Jokes2018;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -35,6 +36,9 @@ namespace FrontEnd
         private void bindDropDownList()
         {
             //throw new NotImplementedException();
+            List<CategoryLookup> jokeCat = CategoriesFactory.Create();
+            ddlJokeCategories.DataSource = jokeCat;
+            ddlJokeCategories.DataBind();
         }
 
         protected void ddlJokeCategories_SelectedIndexChanged(object sender, EventArgs e)
