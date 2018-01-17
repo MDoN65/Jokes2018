@@ -36,5 +36,20 @@ namespace SqlLayer
             DAL.GetData("addJoke", parms);
             return true;
         }
+
+        public static bool UpdateJoke(IJokes joke)
+        {
+            List<parameters> parms = new List<parameters>();
+            parms.Add(new parameters("@jokeID", joke.JokeId, SqlDbType.Int, ParameterDirection.Input));
+            parms.Add(new parameters("@title", joke.Title, SqlDbType.VarChar, ParameterDirection.Input));
+            parms.Add(new parameters("@teaser", joke.Teaser, SqlDbType.VarChar, ParameterDirection.Input));
+            parms.Add(new parameters("@joke_text", joke.JokeText, SqlDbType.VarChar, ParameterDirection.Input));
+            parms.Add(new parameters("@category_id", joke.CategoryId, SqlDbType.Int, ParameterDirection.Input));
+            parms.Add(new parameters("@featured", joke.IsFeatured, SqlDbType.Bit, ParameterDirection.Input));
+            parms.Add(new parameters("@timestamp", joke.TimeStamp, SqlDbType.Timestamp, ParameterDirection.InputOutput));
+            DAL.GetData("UpdateJoke", parms);
+            joke.TimeStamp = parms[6].value;
+            return true;
+        }
     }
 }

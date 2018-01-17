@@ -17,6 +17,7 @@ namespace Jokes2018
         internal string _jokeText;
         internal int _categoryId;
         internal bool _isFeatured;
+        internal object _timestamp;
 
         public int JokeId
         {
@@ -124,6 +125,21 @@ namespace Jokes2018
                     return;
                 }
                 _isFeatured = value;
+            }
+        }
+        public object TimeStamp
+        {
+            get
+            {
+                return this._timestamp;
+            }
+            set
+            {
+                if (value == _timestamp)
+                {
+                    return;
+                }
+                this._timestamp = value;
             }
         }
     }

@@ -30,6 +30,7 @@ namespace Jokes2018
             joke._jokeText = myRow["joke_text"].ToString();
             joke._categoryId = Convert.ToInt32(myRow["category_id"]);
             joke._isFeatured = Convert.ToBoolean(myRow["featured"].ToString());
+            joke._timestamp = myRow["timestamp"]; 
 
             return joke;
         }

@@ -28,7 +28,7 @@
                 <!--image here-->
                 <img src="images/JokerHeaderLogo.jpg" alt="Joker Head Logo" />
                 <h1>Update Joke</h1>
-                <asp:Label ID="lblMessage" runat="server" Text=""></asp:Label>
+                <asp:Label ID="lblMessage" runat="server" ForeColor="Black"></asp:Label>
             </header>
             <div>
                 <asp:Label ID="Label1" runat="server" Text="Title:" CssClass="lbl"></asp:Label>
@@ -50,7 +50,7 @@
                 <asp:CheckBox ID="chkFeatured" runat="server" Width="170px"/>
                 <br /><br />
                 <asp:Button ID="btnSubmit" runat="server" Text="Save" CssClass="bottom" OnClick="btnSubmit_Click" />
-                <asp:Button ID="btnClear" runat="server" Text="Clear" />
+                <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Default.aspx">Go back!</asp:HyperLink>
             </div>
         </div>
     </form>

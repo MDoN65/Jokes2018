@@ -21,8 +21,9 @@ namespace FrontEnd
 
                 if (!String.IsNullOrEmpty(jokeId))
                 {
-                    lblMessage.Visible = false;
+                    
                     Joke joke = JokeFactory.Create(Convert.ToInt32(jokeId));
+                    Session["timestamp"] = joke.TimeStamp;
                     bindJokeInformation(joke);
                     bindDropDownList(joke);
                 } else
@@ -52,6 +53,34 @@ namespace FrontEnd
 
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
+            try
+            {
+                Joke joke = JokeFactory.Create();
+                joke.Title = txtTitle.Text;
+                joke.Teaser = txtTeaser.Text;
+                joke.JokeText = txtJokeText.Text;
+                joke.CategoryId = Convert.ToInt32(ddlCategory.SelectedValue);
+                joke.JokeId = Convert.ToInt16(Request.QueryString["jID"]);
+                joke.TimeStamp = Session["timestamp"];
+                if (chkFeatured.Checked == true)
+                {
+                    joke.IsFeatured = true;
+                }
+                else
+                {
+                    joke.IsFeatured = false;
+                }
+
+
+                CUDMethods.Update(joke);
+                lblMessage.Text = "Joke has been updated!";
+                Session["timestamp"] = joke.TimeStamp;
+                //Clear();
+            }
+            catch (Exception ex)
+            {
+                lblMessage.Text = ex.Message;
+            }
 
         }
     }
