@@ -17,6 +17,13 @@ namespace Jokes2018
 
     }
 
+    public class JokesLookup
+    {
+        internal JokesLookup() { }
+        
+        public int jokeId { get; internal set; }
+        public string title { get; internal set; }
+    }
 
 
 }
