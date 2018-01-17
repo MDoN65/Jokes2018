@@ -48,7 +48,7 @@
                             <div class="Jokes">
                                 <h2><%#Eval("Title")%></h2>
                                 <p><%#Eval("JokeText") %></p>
-                                <p><a href="Default.aspx">Start Again</a> | <a href="UpdateJoke.aspx?=<%# Eval("JokeID") %>">Edit Joke</a></p>
+                                <p><a href="Default.aspx">Start Again</a> | <a href="UpdateJoke.aspx?jID=<%# Eval("JokeID") %>">Edit Joke</a></p>
                             </div>
                         </ItemTemplate>
                     </asp:Repeater>
