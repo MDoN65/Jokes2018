@@ -31,7 +31,7 @@ namespace FrontEnd
         private void bindJokeRepeater(string jokeId)
         {
             Joke joke = JokeFactory.Create(Convert.ToInt32(jokeId));
-            List<Joke> lstJoke;
+            List<Joke> lstJoke = new List<Joke>();
             lstJoke.Add(joke);
             rptJokes.DataSource = lstJoke;
             rptJokes.DataBind();
@@ -53,10 +53,13 @@ namespace FrontEnd
                 List<JokesLookup> joke = JokesFactory.Create(catId);
                 RptJokeTitles.DataSource = joke;
                 RptJokeTitles.DataBind();
+                lblMessage.Text = "";
             }
             catch (Exception ex)
             {
                 lblMessage.Text = ex.Message;
+                RptJokeTitles.DataSource = null;
+                RptJokeTitles.DataBind();
             }
         }
     }
