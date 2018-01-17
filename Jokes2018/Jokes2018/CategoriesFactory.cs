@@ -11,28 +11,27 @@ namespace Jokes2018
     public static class CategoriesFactory
     {
 
-        public static List<Category> Create()
+        public static List<CategoryLookup> Create()
         {
-            DataTable dt = ContactSQL.RetrieveAll();
+            DataTable dt = CategorySql.RetrieveCategories();
 
-            List<ContactLookup> lstContact = Repackage(dt);
+            List<CategoryLookup> lstContact = Repackage(dt);
             return lstContact;
         }
 
-        private static List<ContactLookup> Repackage(DataTable dt)
+        private static List<CategoryLookup> Repackage(DataTable dt)
         {
-            List<ContactLookup> list = new List<ContactLookup>();
+            List<CategoryLookup> list = new List<CategoryLookup>();
 
             if (dt.Rows.Count != 0)
             {
                 foreach (DataRow dr in dt.Rows)
                 {
-                    ContactLookup myContactLookup = new ContactLookup();
+                    CategoryLookup myCategory = new CategoryLookup();
 
-                    myContactLookup.Name = dr["Name"].ToString();
-                    myContactLookup.ContactId = Convert.ToInt32(dr["ContactId"]);
-                    myContactLookup.Email = dr["Email"].ToString();
-                    list.Add(myContactLookup);
+                    myCategory.categoryId = Convert.ToInt32(dr["categoryID"]);
+                    myCategory.categoryName = dr["categoryName"].ToString();
+                    list.Add(myCategory);
                 }
 
                 return list;
