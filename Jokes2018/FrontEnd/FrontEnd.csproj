@@ -80,6 +80,7 @@
     <Content Include="Global.asax" />
     <Content Include="images\JokerHeaderLogo.jpg" />
     <Content Include="style.css" />
+    <Content Include="UpdateJoke.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -101,10 +102,23 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UpdateJoke.aspx.cs">
+      <DependentUpon>UpdateJoke.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UpdateJoke.aspx.designer.cs">
+      <DependentUpon>UpdateJoke.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Jokes2018\BusinessLayer.csproj">
+      <Project>{d12a2fe9-bae4-40d3-ab81-fe2d759b9130}</Project>
+      <Name>BusinessLayer</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
