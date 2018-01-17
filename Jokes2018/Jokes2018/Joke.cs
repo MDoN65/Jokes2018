@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Types;
 
 namespace Jokes2018
 {
-    public class Joke
+    public class Joke : IJokes
     {
         internal Joke() { }
 

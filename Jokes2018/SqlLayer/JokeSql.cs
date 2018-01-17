@@ -25,15 +25,16 @@ namespace SqlLayer
             return DAL.GetData("getJokesByCategory", parms);
         }
 
-        public static DataTable InsertJoke(IJokes joke)
+        public static bool InsertJoke(IJokes joke)
         {
             List<parameters> parms = new List<parameters>();
-            parms.Add(new parameters("@Title", joke.Title, SqlDbType.VarChar, ParameterDirection.Input));
-            parms.Add(new parameters("@Teaser", joke.Teaser, SqlDbType.VarChar, ParameterDirection.Input));
-            parms.Add(new parameters("@JokeText", joke.JokeText, SqlDbType.VarChar, ParameterDirection.Input));
-            parms.Add(new parameters("@CategoryId", joke.CategoryId, SqlDbType.Int, ParameterDirection.Input));
-            parms.Add(new parameters("@Featured", joke.IsFeatured, SqlDbType.Bit, ParameterDirection.Input));
-            return DAL.GetData("addJoke", parms);
+            parms.Add(new parameters("@title", joke.Title, SqlDbType.VarChar, ParameterDirection.Input));
+            parms.Add(new parameters("@teaser", joke.Teaser, SqlDbType.VarChar, ParameterDirection.Input));
+            parms.Add(new parameters("@jokeText", joke.JokeText, SqlDbType.VarChar, ParameterDirection.Input));
+            parms.Add(new parameters("@categoryId", joke.CategoryId, SqlDbType.Int, ParameterDirection.Input));
+            parms.Add(new parameters("@featured", joke.IsFeatured, SqlDbType.Bit, ParameterDirection.Input));
+            DAL.GetData("addJoke", parms);
+            return true;
         }
     }
 }
