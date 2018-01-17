@@ -31,7 +31,7 @@ namespace Jokes2018
             joke._creationDate = Convert.ToDateTime(myRow["created_at"].ToString());
             joke._userId = Convert.ToInt32(myRow["user_id"]);
             joke._categoryId = Convert.ToInt32(myRow["category_id"]);
-            joke._isFeatured = Convert.ToBoolean(myRow["postalCode"].ToString());
+            joke._isFeatured = Convert.ToBoolean(myRow["featured"].ToString());
 
             return joke;
         }
