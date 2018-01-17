@@ -28,8 +28,6 @@ namespace Jokes2018
             joke._title = myRow["title"].ToString();
             joke._teaser = myRow["teaser"].ToString();
             joke._jokeText = myRow["joke_text"].ToString();
-            joke._creationDate = Convert.ToDateTime(myRow["created_at"].ToString());
-            joke._userId = Convert.ToInt32(myRow["user_id"]);
             joke._categoryId = Convert.ToInt32(myRow["category_id"]);
             joke._isFeatured = Convert.ToBoolean(myRow["featured"].ToString());
 

@@ -32,7 +32,6 @@ namespace FrontEnd
             txtTitle.Text = "";
             txtTeaser.Text = "";
             txtJokeText.Text = "";
-            lblMessage.Text = "";
             ddlCategory.SelectedIndex = 0;
             chkFeatured.Checked = false;
         }
@@ -60,6 +59,7 @@ namespace FrontEnd
                     joke.IsFeatured = false;
                 }
                 CUDMethods.Add(joke);
+                lblMessage.Text = "Joke has been added!";
                 Clear();
             }
             catch (Exception ex)
