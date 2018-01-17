@@ -6,13 +6,17 @@ using System.Threading.Tasks;
 
 namespace Jokes2018
 {
-    public class CategoriesLookup
-    {
-        internal CategoriesLookup() { }
 
-        public int ContactId { get; internal set; }
-        public string Name { get; internal set; }
-        public string Email { get; internal set; }
+
+    public class CategoryLookup
+    {
+        internal CategoryLookup() { }
+
+        public int categoryId { get; internal set; }
+        public string categoryName { get; internal set; }
 
     }
+
+
+
 }
