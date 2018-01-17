@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Category.cs" />
+    <Compile Include="JokeCUD.cs" />
     <Compile Include="ListsFactory.cs" />
     <Compile Include="Joke.cs" />
     <Compile Include="JokeFactory.cs" />
