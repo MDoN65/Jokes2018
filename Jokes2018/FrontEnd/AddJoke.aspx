@@ -44,7 +44,9 @@
             <asp:TextBox ID="txtUser" runat="server"></asp:TextBox>
             <br />--%>
                 <asp:Label ID="Label5" runat="server" Text="Category:" CssClass="lbl"></asp:Label>
-                <asp:DropDownList ID="ddlCategory" runat="server" Width="174px"></asp:DropDownList>
+                <asp:DropDownList ID="ddlCategory" AutoPostBack="True" AppendDataBoundItems="true" runat="server" Width="174px">
+                    <asp:ListItem>-- Select a Category --</asp:ListItem>
+                </asp:DropDownList>
                 <br /><br />
                 <asp:Label ID="Label6" runat="server" Text="Featured:" CssClass="lbl" ></asp:Label>
                 <asp:CheckBox ID="chkFeatured" runat="server" Width="170px"/>
