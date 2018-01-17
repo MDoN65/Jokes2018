@@ -14,8 +14,6 @@ namespace Jokes2018
         internal string _title;
         internal string _teaser;
         internal string _jokeText;
-        internal DateTime _creationDate;
-        internal int _userId;
         internal int _categoryId;
         internal bool _isFeatured;
 
@@ -95,37 +93,6 @@ namespace Jokes2018
             }
         }
 
-        public DateTime CreationDate
-        {
-            get
-            {
-                return _creationDate;
-            }
-            set
-            {
-                if (_creationDate == value)
-                {
-                    return;
-                }
-                _creationDate = value;
-            }
-        }
-
-        public int UserId
-        {
-            get
-            {
-                return _userId;
-            }
-            set
-            {
-                if (_userId == value)
-                {
-                    return;
-                }
-                _userId = value;
-            }
-        }
 
         public int CategoryId
         {

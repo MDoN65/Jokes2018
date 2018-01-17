@@ -24,5 +24,16 @@ namespace SqlLayer
             parms.Add(new parameters("@categoryId", catId, SqlDbType.Int, ParameterDirection.Input));
             return DAL.GetData("getJokesByCategory", parms);
         }
+
+        public static DataTable InsertJoke(IJokes joke)
+        {
+            List<parameters> parms = new List<parameters>();
+            parms.Add(new parameters("@Title", joke.Title, SqlDbType.VarChar, ParameterDirection.Input));
+            parms.Add(new parameters("@Teaser", joke.Teaser, SqlDbType.VarChar, ParameterDirection.Input));
+            parms.Add(new parameters("@JokeText", joke.JokeText, SqlDbType.VarChar, ParameterDirection.Input));
+            parms.Add(new parameters("@CategoryId", joke.CategoryId, SqlDbType.Int, ParameterDirection.Input));
+            parms.Add(new parameters("@Featured", joke.IsFeatured, SqlDbType.Bit, ParameterDirection.Input));
+            return DAL.GetData("addJoke", parms);
+        }
     }
 }

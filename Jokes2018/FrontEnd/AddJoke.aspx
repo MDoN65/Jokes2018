@@ -51,8 +51,8 @@
                 <asp:Label ID="Label6" runat="server" Text="Featured:" CssClass="lbl" ></asp:Label>
                 <asp:CheckBox ID="chkFeatured" runat="server" Width="170px"/>
                 <br /><br />
-                <asp:Button ID="btnSubmit" runat="server" Text="Save" CssClass="bottom" />
-                <asp:Button ID="btnClear" runat="server" Text="Clear" />
+                <asp:Button ID="btnSubmit" runat="server" Text="Save" CssClass="bottom" OnClick="btnSubmit_Click" />
+                <asp:Button ID="btnClear" runat="server" Text="Clear" OnClick="btnClear_Click" />
             </div>
         </div>
     </form>
