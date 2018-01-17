@@ -59,7 +59,7 @@ namespace FrontEnd
                 {
                     joke.IsFeatured = false;
                 }
-
+                CUDMethods.Add(joke);
                 Clear();
             }
             catch (Exception ex)
