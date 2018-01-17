@@ -9,12 +9,9 @@ namespace Types
 {
     public interface IJokes
     {
-        int Id { get; set; }
         string Title { get; set; }
         string Teaser { get; set; }
         string JokeText { get; set; }
-        DateTime CreateAt { get; set; }
-        int UserId { get; set; }
         int CategoryId { get; set; }
         bool IsFeatured { get; set; }
 
