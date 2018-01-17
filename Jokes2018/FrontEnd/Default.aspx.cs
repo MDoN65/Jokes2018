@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Jokes2018;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,7 +12,7 @@ namespace FrontEnd
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(!IsPostBack)
+            if (!IsPostBack)
             {
                 ddlJokeCategories.DataTextField = "categoryName";
                 ddlJokeCategories.DataValueField = "categoryID";
@@ -29,17 +30,32 @@ namespace FrontEnd
 
         private void bindJokeRepeater(string jokeId)
         {
-            //throw new NotImplementedException();
+            Joke joke = JokeFactory.Create(Convert.ToInt32(jokeId));
+            rptJokes.DataSource = joke;
+            rptJokes.DataBind();
         }
 
         private void bindDropDownList()
         {
-            //throw new NotImplementedException();
+            List<CategoryLookup> jokeCat = CategoriesFactory.Create();
+            ddlJokeCategories.DataSource = jokeCat;
+            ddlJokeCategories.DataBind();
         }
 
         protected void ddlJokeCategories_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //throw new NotImplementedException();
+            try
+            {
+                int catId = Convert.ToInt32(ddlJokeCategories.SelectedValue);
+
+                List<JokesLookup> joke = JokesFactory.Create(catId);
+                RptJokeTitles.DataSource = joke;
+                RptJokeTitles.DataBind();
+            }
+            catch (Exception ex)
+            {
+                lblMessage.Text = ex.Message;
+            }
         }
     }
 }

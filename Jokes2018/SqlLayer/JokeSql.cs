@@ -17,5 +17,12 @@ namespace SqlLayer
             parms.Add(new parameters("@id", jokeId, SqlDbType.Int, ParameterDirection.Input));
             return DAL.GetData("getJokeDetails", parms);
         }
+
+        public static DataTable RetrieveJokesByCategory(int catId)
+        {
+            List<parameters> parms = new List<parameters>();
+            parms.Add(new parameters("@categoryId", catId, SqlDbType.Int, ParameterDirection.Input));
+            return DAL.GetData("getJokesByCategory", parms);
+        }
     }
 }
