@@ -31,7 +31,9 @@ namespace FrontEnd
         private void bindJokeRepeater(string jokeId)
         {
             Joke joke = JokeFactory.Create(Convert.ToInt32(jokeId));
-            rptJokes.DataSource = joke;
+            List<Joke> lstJoke;
+            lstJoke.Add(joke);
+            rptJokes.DataSource = lstJoke;
             rptJokes.DataBind();
         }
 
