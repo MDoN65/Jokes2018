@@ -48,7 +48,7 @@
                             <div class="Jokes">
                                 <h2><%#Eval("Title")%></h2>
                                 <p><%#Eval("JokeText") %></p>
-                                <p><a href="Default.aspx">Start Again</a></p>
+                                <p><a href="Default.aspx">Start Again</a> | <a href="UpdateJoke.aspx?=<%# Eval("JokeID") %>">Edit Joke</a></p>
                             </div>
                         </ItemTemplate>
                     </asp:Repeater>
@@ -63,7 +63,7 @@
                 <!--finish the hyperlinks-->
                 <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Default.aspx">Home</asp:HyperLink>
                 |
-                <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/SaveCategory.aspx">Save Category</asp:HyperLink>
+                <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/AddJoke.aspx">Add Joke</asp:HyperLink>
                 | &copy; The Joker Blog ~ 2017
             
             </footer>
